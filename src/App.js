@@ -7,6 +7,7 @@ import Chart from './components/Chart'
 import Portfolio from './components/Portfolio'
 import AutocompleteTickerInput from './components/AutocompleteTickerInput'
 import { connect } from 'react-redux'
+import APIdataTransformer from './utils/APIdataTransformer'
 
 
 
@@ -34,7 +35,8 @@ function App(props) {
        const fetchData = async() => {
         setDataToDisplay({data:dataToDispaly.data,isFetching:true})
         const response = await api.stockTimeSeries(props.tickers,range)
-        setDataToDisplay({data:response.data,isFetching:false})
+        const modifiedResponse = APIdataTransformer.stockDataTransformer(response.data,props.portfolio)
+        setDataToDisplay({data:modifiedResponse,isFetching:false})
        }
       fetchData()
       if (Object.keys(dataToDispaly.data) === props.tickers)

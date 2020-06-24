@@ -41,7 +41,7 @@ const Chart = (props) => {
             <LineChart
                 width={900}
                 height={500}
-                data={APIdataTransformer.stockDataTransformer(props.data,props.portfolio)}
+                data={props.data}
                 margin={{ top: 50, right: 20, left: 10, bottom: 5 }}
                 >
                 <YAxis tickCount={10} type="number" width={80}>

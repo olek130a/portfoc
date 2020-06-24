@@ -11,7 +11,7 @@ export default {
         'method':'GET',
         'url':`/stock/market/batch`,
         'params':{
-            'token':process.env.IEXCLOUD_PUBLIC_KEY,
+            'token':process.env.REACT_APP_IEXCLOUD_SECRET_KEY,
             'types':'chart',
             'symbols':`${symbols.join()}`,
             'chartCloseOnly':'true',
@@ -23,7 +23,7 @@ export default {
         'method':'GET',
         'url':'/ref-data/symbols',
         'params':{
-            'token':process.env.IEXCLOUD_PUBLIC_KEY
+            'token':process.env.REACT_APP_IEXCLOUD_SECRET_KEY
         }
     })
  }
