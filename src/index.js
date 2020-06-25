@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import  configureStore from './store/configureStore'
+import {saveState} from '../src/utils/localStorage'
+import '../src/sass/main.scss'
+
+
 
 
 
@@ -17,8 +21,14 @@ const symbolFetch = async () => {
     window.localStorage.setItem('symbols',parsed)
   }
 }
-
 symbolFetch()
+
+store.subscribe(()=>{
+  console.log(store.getState())
+  saveState(store.getState().portfolio)
+})
+
+
 
 
 

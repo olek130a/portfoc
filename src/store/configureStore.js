@@ -1,7 +1,6 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, getState } from 'redux';
 import portfolioReducer from '../reducers/portfolio' 
-// import expensesReducer from '../reducers/expenses';
-// import filtersReducer from '../reducers/filters';
+
 
 export default () => {
   const store = createStore(
@@ -13,3 +12,5 @@ export default () => {
 
   return store;
 };
+
+

@@ -2,7 +2,6 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 
 import api from './api/api'
-import dataTransformer from './utils/APIdataTransformer'
 import Chart from './components/Chart'
 import Portfolio from './components/Portfolio'
 import AutocompleteTickerInput from './components/AutocompleteTickerInput'
@@ -14,9 +13,7 @@ import APIdataTransformer from './utils/APIdataTransformer'
 
 function App(props) {
 
-  const [responseData, setResponseData] = useState()
-  const [tickers, setTicker] = useState()
-  const [message, setMessage] = useState('')
+
   const [range, setRange] = useState('1m')
 
   

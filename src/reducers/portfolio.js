@@ -1,20 +1,7 @@
 //Portfolio reducer
-import {v4 as uuid} from 'uuid'
+import {loadState} from '../utils/localStorage'
 
-const portfolioReducerDefaultState = [
-    {
-        id:uuid(),
-        symbol:'TSLA',
-        name: 'TESLA',
-        share: 2
-      },
-      {
-        id:uuid(),
-        symbol:'A',
-        name: 'Agilent Technologies Inc.',
-        share: 2
-      }
-]
+const portfolioReducerDefaultState = loadState()
 
 export default (state = portfolioReducerDefaultState,action) => {
     switch (action.type) {
