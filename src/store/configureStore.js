@@ -1,4 +1,4 @@
-import { createStore, combineReducers, getState } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import portfolioReducer from '../reducers/portfolio' 
 
 

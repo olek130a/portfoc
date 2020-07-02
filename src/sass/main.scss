@@ -1,3 +1,15 @@
-* {
-    font-size: 20px;
-}
+@import "./base/base";
+@import "./base/typography";
+
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+@import "./components/chart";
+@import "./components/input";
+@import "./components/portfolioRecord";
+@import './components/rangePicker';
+@import './components/textfileds.scss';
+
+@import "./layout/footer";
+@import "./layout/portfolio";

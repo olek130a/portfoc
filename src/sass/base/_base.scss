@@ -1,0 +1,38 @@
+@import "../abstracts/variables";
+
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+//    background-color: lightblue;
+}
+html{
+    //This defines what 1 rem is
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+.App {
+    display:grid;
+    grid-template-areas: 
+            "input input input"
+            "chart chart portfolio"
+            "chart chart portfolio";
+    margin: 2%;
+}
+
+@media (max-width: 1500px) {
+    .App {
+        display:grid;
+        grid-template-areas: 
+            "input input"
+            "chart chart "
+            "portfolio portfolio";
+    
+    }
+}

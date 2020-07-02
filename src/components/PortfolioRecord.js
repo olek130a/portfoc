@@ -1,28 +1,49 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {RemoveItem,EditItem} from '../actions/portfolio'
 import TextField from '@material-ui/core/TextField'
 
-const PortfolioRecord = (props) => {
 
+
+
+
+const PortfolioRecord = (props) => {
+ 
     const onChangeHandler = (e) => {
         props.dispatch(EditItem({id:props.record.id,
             share:e.target.value}))
     } 
 
+    const style = {
+        border: "none",
+        width: '8rem',
+        fontSize: '10rem'
+}
+
+  
     return (
-        <div>
-            {props.record.symbol}
-            <TextField 
-                placeholder={props.record.share}
-                type={'number'}
-                siez={'small'}
-                variant={'outlined'}
-                onChange={onChangeHandler}
-            /> <button
-            onClick={()=>props.dispatch(RemoveItem(props.record))}
-            >X</button>
-        </div>
+            <div className={'PortfolioRecord'}>
+                <h3 className={'PortfolioRecord__symbol'}>{props.record.symbol}</h3>
+                <h3 className={'PortfolioRecord__name'}>{props.record.name}</h3>
+                <TextField
+                    className={'input__share'}
+                    defaultValue={props.record.share}
+                    width='50%'
+                    type={'number'}
+                    size={'normal'}
+                    variant={'outlined'}
+                    onChange={onChangeHandler}
+                    margin={'dense'}
+                    color={'secondary'}
+                    style={style}
+                    inputProps={{
+                        min:0
+                    }}
+                /> 
+                <button
+                    onClick={()=>props.dispatch(RemoveItem(props.record))}
+                >X</button>
+            </div>
     )
 }
 

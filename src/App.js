@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-
+import {StylesProvider} from '@material-ui/core/styles'
 import api from './api/api'
 import Chart from './components/Chart'
 import Portfolio from './components/Portfolio'
@@ -24,7 +24,14 @@ function App(props) {
   const onClickHandler = (e) => {
     e.preventDefault()
     const newRange = e.target.id
-    console.log(newRange)
+    const ranges = ['1m','1y','ytd']
+    ranges.forEach((range)=>{
+      console.log(document.getElementById(range).className)
+      document.getElementById(range).className = 'button'
+    })
+    e.target.className = 'button--active'
+
+
     setRange(newRange)
   }
 
@@ -46,15 +53,17 @@ function App(props) {
 
   
   return (
-    <div className="App">
-    <AutocompleteTickerInput/>
-    <Portfolio
-    />
-    <Chart
-    data={dataToDispaly.isFetching === false ? dataToDispaly.data : []}
-    onClickHandler={onClickHandler}
-    />
-    </div>
+    <StylesProvider injectFirst>
+      <div className="App">
+        <AutocompleteTickerInput/>
+        <Portfolio
+        />
+        <Chart
+          data={dataToDispaly.isFetching === false ? dataToDispaly.data : []}
+          onClickHandler={onClickHandler}
+        />
+      </div>
+    </StylesProvider>
   );
 }
 

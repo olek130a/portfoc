@@ -1,0 +1,36 @@
+.PortfolioRecord {
+    color:black;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: row;
+    max-width: 90vw;
+    margin: auto;
+}
+
+.PortfolioRecord h3{
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+}
+
+.PortfolioRecord__symbol {
+    width: 10rem;
+}
+.PortfolioRecord__name {
+    flex-grow: 2;
+}
+
+.PortfolioRecord .MuiInputBase-root {
+
+}
+
+.PortfolioRecord button{
+    width: 5em;
+    border: none;
+    background: none;
+    margin: auto;
+    cursor: pointer;
+}
+
+.PortfolioRecord:not(:last-child){
+    border-bottom: none;
+}
