@@ -17,7 +17,8 @@ const PortfolioRecord = (props) => {
     const style = {
         border: "none",
         width: '8rem',
-        fontSize: '10rem'
+        fontSize: '10rem',
+        fontFamily: 'Press Start 2P'
 }
 
   
@@ -34,7 +35,6 @@ const PortfolioRecord = (props) => {
                     variant={'outlined'}
                     onChange={onChangeHandler}
                     margin={'dense'}
-                    color={'secondary'}
                     style={style}
                     inputProps={{
                         min:0

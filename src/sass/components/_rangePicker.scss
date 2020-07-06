@@ -14,10 +14,10 @@
     height: 3rem;
     width: 6rem;
     color: black;
-    font-size: 2rem;
+    font-size: 1rem;
     border: 1px solid black;
-    padding: auto;
     padding-left: 1.5rem;
+    padding-top: 1rem;
     cursor: pointer;
 
     &--active{
@@ -25,10 +25,10 @@
         width: 6rem;
         background: black;
         color: white;
-        font-size: 2rem;
+        font-size: 1rem;
         border: 1px solid black;
-        padding: 0 auto;
         padding-left: 1.5rem;
+        padding-top: 1rem;
         cursor: pointer;
     }
     &:not(:last-child) {
